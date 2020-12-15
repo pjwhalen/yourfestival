@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ festival_name }}
+{% endblock %}
+
+{% block main %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>    
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    
+    <div>
+        <h2 data-aos="fade-right" data-aos-duration="500">{{ username }}</h2>
+    </div>
+    <div>
+        <h3 data-aos="fade-left" data-aos-delay="500" data-aos-duration="600">Presents</h3>
+    </div>
+    <div>
+        <h1 data-aos="zoom-out" data-aos-delay="1000" data-aos-duration="2000" class="logo">{{ festival_name }}</h1>
+    </div>
+    <div>
+        <h4 data-aos="zoom-out" data-aos-delay="1000" data-aos-duration="2000">June 12, 2021</h4>
+    </div>
+    <div data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="2300" class="divider"><span></span><span>Lineup</span><span></span></div>
+
+    <div data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="900" class="grid-container">  
+        {% for artist in lineup %}
+        <div class="grid-item shadow" data-aos="flip-up" data-aos-duration="900" style="background-image: url({{ artist['img'] }});">
+            {{ artist["name"] }}
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ festival_name }}
+{% endblock %}
+
+{% block main %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>    
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="/schedule" method="POST">
+        <button {{ button_hide }} class="btn shadow" style="background-color: #1DB954; color: white; width: 200px; margin-bottom: 12px;" type="submit">Start Festival!</button>
+    </form>
+
+    <div>
+        <h1 {{ header_hide }} class="logo">Enjoy the festival!</h1>
+    </div>
+
+    <div>  
+      <!-- https://getbootstrap.com/docs/4.0/content/tables/ -->
+        <table class="table table-bordered table-dark">
+          <thead>           
+            <tr class="rowfix">
+                <th colspan="2" scope="col">June 12, 2021</th>
+            </tr>
+            <tr class="rowfix">
+                <th scope="col">Time</th>
+                <th scope="col">Artist</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class= "rowfix" style="background-image: url({{ lineup[0]['img'] }});">
+              <td>{{ schedule[0] }}</td>
+              <td>{{ lineup[0]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[1]['img'] }});">
+              <td>{{ schedule[1] }}</td>
+              <td>{{ lineup[1]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[2]['img'] }});">
+              <td>{{ schedule[2] }}</td>
+              <td>{{ lineup[2]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[3]['img'] }});">
+              <td>{{ schedule[3] }}</td>
+              <td>{{ lineup[3]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[4]['img'] }});">
+              <td>{{ schedule[4] }}</td>
+              <td>{{ lineup[4]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[5]['img'] }});">
+              <td>{{ schedule[5] }}</td>
+              <td>{{ lineup[5]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[6]['img'] }});">
+              <td>{{ schedule[6] }}</td>
+              <td>{{ lineup[6]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[7]['img'] }});">
+              <td>{{ schedule[7] }}</td>
+              <td>{{ lineup[7]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[8]['img'] }});">
+              <td>{{ schedule[8] }}</td>
+              <td>{{ lineup[8]["name"] }}</td>
+            </tr>
+            <tr class= "rowfix" style="background-image: url({{ lineup[9]['img'] }});">
+              <td>{{ schedule[9] }}</td>
+              <td>{{ lineup[9]["name"] }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+{% endblock %}
