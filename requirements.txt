@@ -5,3 +5,6 @@ requests
 gunicorn
 psycopg2
 spotipy
+uuid
+json
+random
