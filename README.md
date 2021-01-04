@@ -6,6 +6,8 @@ The only requirement to get started is that the user have a Spotify account.
 
 Video Walkthrough: https://youtu.be/ezEIvS9koKI 
 
+Just got the app up and running. Try the app yourself here: https://yourfestival.herokuapp.com/
+
 # Setup
 ---
 This app was made using Python, Javascript, HTML, CSS, and Flask. Running the app will require Python 3 and flask/flask_sessions be installed. Also essential to running this project is Spotipy, a python module that simplifies the URL generation for making requests from the Spotify API. This can be installed by running `pip install spotipy --upgrade` in the terminal.
