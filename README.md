@@ -10,6 +10,8 @@ Just got the app up and running. Try the app yourself here: https://yourfestival
 
 # Setup
 ---
+(You can skip if you're just using the hosted website at https://yourfestival.herokuapp.com/)
+
 This app was made using Python, Javascript, HTML, CSS, and Flask. Running the app will require Python 3 and flask/flask_sessions be installed. Also essential to running this project is Spotipy, a python module that simplifies the URL generation for making requests from the Spotify API. This can be installed by running `pip install spotipy --upgrade` in the terminal.
 
 To run the application, download the program files and in the "Festival" folder, run `python3 app.py` in the terminal. I believe this needs to be done locally and not in a cloud-based IDE, as there's a specific address that running the program will return. The Spotify API expects that address in order to successfully register users. The terminal should spit back out a link to follow like follows: http://127.0.0.1:8080/
