@@ -18,6 +18,7 @@ Session(app)
 #  Client Keys and redirect URI. "export" these if this ever goes into production so others don't have access
 CLIENT_ID = "a776809dbc5b43acbec15376d3a7a704"
 CLIENT_SECRET = "9a72bbd2e4ec424eaec19de8230cec9c"
+# REDIRECT_URI = "http://127.0.0.1:8080/"
 REDIRECT_URI = "http://yourfestival.herokuapp.com/generate_festival"
 scope = "user-top-read user-read-playback-state streaming ugc-image-upload playlist-modify-public"
 
@@ -261,8 +262,8 @@ def schedule():
 
         flash('Playlist not found. Create playlist before starting festival.')
         return redirect('/schedule')
-
-    return render_template("schedule.html", lineup=ordered_lineup, festival_name=festival_name, username=username, button_hide=button_hide, header_hide=header_hide, schedule=schedule)
+    else:
+        return render_template("schedule.html", lineup=ordered_lineup, festival_name=festival_name, username=username, button_hide=button_hide, header_hide=header_hide, schedule=schedule)
 
 
 @app.route('/generate_playlist')
